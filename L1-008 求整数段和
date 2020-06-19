@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main(){
+    int max,min,sum=0;
+    scanf("%d %d",&min,&max);
+    
+
+    
+    for(int i=min,j=0;i<=max;i++){
+        printf("%5d",i);
+        sum=sum+i;        
+        j++;
+        if(j%5==0&&i!=max){
+            printf("\n");
+        }
+    }
+    printf("\n");
+    printf("Sum = %d\n",sum);
+}
