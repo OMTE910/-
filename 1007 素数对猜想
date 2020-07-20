@@ -1,0 +1,35 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+bool issushu(int n){
+	if(n==1){
+		return false;
+	}
+	else if(n==2){
+		return true;
+	}
+	else{
+		for(int i=2;i<=sqrt(n);i++){
+			if(n%i==0){
+				return false;
+				break;
+			}	
+		}
+		return true;
+	}
+}
+
+int main(){
+	int num,count=0;
+	cin>>num;
+	for(int i=1;i<=num-2;i++){
+		if(issushu(i)&&issushu(i+2)){
+			count++;
+		}
+		
+	}
+	cout<<count;
+} 
+
+
