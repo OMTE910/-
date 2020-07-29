@@ -1,0 +1,31 @@
+
+#include<stdio.h>
+#include<string.h>
+int main(void){
+    char a[100][100],c;
+    int length,i;
+    length=80;
+    i=0;
+    while((c=getchar())!='\n'){
+     if(c==' '){
+       a[length][i]='\0'; //这一步很重要，防止 字符数组 输出过界
+       length--;
+       i=0;
+       continue;
+     }
+     else {
+       a[length][i]=c;
+       i++;
+    } 
+   }
+   a[length][i]='\0';
+   for(i=length;i<81;i++){
+     if(i==80){
+       printf("%s",a[80]);
+       break;
+     }
+     else printf("%s ",a[i]);
+   }
+   return 0;
+}
+ 
