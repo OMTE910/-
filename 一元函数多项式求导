@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+struct Complex{
+	int x;
+	int n;
+};
+
+int main(){
+	int flag=0;
+	struct Complex num[100];
+	int i=0;
+	while(cin>>num[i].x>>num[i].n){
+		if(0==num[i].n) break;
+		i++;
+	}
+	i=0;
+	
+	if(num[i].n==0){
+		cout<<0<<" "<<0;
+	}
+	else
+		while(num[i].n>0){
+			if(flag==1) cout<<" ";
+			cout<<num[i].x*num[i].n<<" "<<num[i].n-1;
+			flag=1;
+			i++;
+		}
+} 
