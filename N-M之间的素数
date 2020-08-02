@@ -1,0 +1,47 @@
+#include<stdio.h>
+ #include<math.h> 
+ int get(int num)//判断素数函数
+ {
+ 	for (int i=2;i<=sqrt(num*1.0);++i)    
+ {    
+  if (num%i==0) 
+  return 0;  
+  }   
+ return 1;
+ } 	
+main()
+{
+	int A[10000]={0};
+	int m=0,num=2;	
+	while(1>0)
+	{
+		if(get(num))
+		{
+			A[m++]=num;			
+		}
+	if(m==10000)//
+	{
+		break;
+	}
+	num++;
+ } 			
+ 	
+int g=0,z=0,k=0;
+scanf("%d %d",&g,&z);
+for(int i=g-1;i<=z-1;i++)
+{
+k++;
+if(k%10==0)//空格和换行问题
+	{
+		printf("%d",A[i]);
+		printf("\n");
+	}
+	else if(i==z-1)
+		{
+				printf("%d",A[i]);
+		}
+	else
+	{	
+	printf("%d ",A[i]);}		
+}
+ }	
