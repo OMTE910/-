@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<string.h>
+#include<iostream>
+using namespace std;
+void increase(char a[]){
+    char t;
+    for(int i=0;i<4;i++){
+        for(int j=i+1;j<4;j++){
+            if(a[i]-'0'>a[j]-'0'){
+                t=a[i];
+                a[i]=a[j];
+                a[j]=t;
+            }
+        }
+    }
+}
+int main()
+{
+    char a[4];
+    int max,min,tmp=1,t;
+    scanf("%s",a);
+    if(strlen(a)<4){
+        for(int i=strlen(a);i<4;i++){
+            a[i]=0+'0';
+        }
+    }
+    while(tmp!=6174){
+        
+        increase(a);
+        min=(a[0]-'0')*1000+(a[1]-'0')*100+(a[2]-'0')*10+(a[3]-'0');
+        max=(a[3]-'0')*1000+(a[2]-'0')*100+(a[1]-'0')*10+(a[0]-'0');
+        tmp=max-min;
+        if(tmp==0){
+            printf("%04d - %04d = 0000",max,min);
+            break;
+        }
+        printf("%04d - %04d = %04d\n",max,min,tmp);
+        t=tmp;
+        for(int i=0;i<4;i++){ //不能用whlie循环
+            a[i]=t%10+'0';//数字存入字符数组
+            t=t/10;
+        }
+    }
+    return 0;
+}
